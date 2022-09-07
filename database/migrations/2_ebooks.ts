@@ -5,7 +5,7 @@ export default class Ebooks extends BaseSchema {
 
   public async up () {
     this.schema.createTable(this.tableName, (table) => {
-      table.increments('id')
+      table.increments('id').primary
       table.string('title').notNullable()
       table.string('author').notNullable()
       table.string('summary').notNullable()

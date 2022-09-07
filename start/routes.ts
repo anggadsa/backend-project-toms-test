@@ -32,3 +32,7 @@ Route.get('health', async ({ response }) => {
 Route.get('/', async () => {
   return { hello: 'world' }
 })
+
+Route
+  .resource('users', 'UsersController')
+  .only(['index', 'create', 'show'])
