@@ -7,8 +7,8 @@ export default class Orders extends BaseSchema {
   public async up () {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
-      table.integer('ebook_id').notNullable()
-      table.integer('customer_id').notNullable()
+      table.integer('ebook_id').unsigned().notNullable().references('id').inTable('ebooks');
+      table.integer('customer_id').notNullable().notNullable().references('id').inTable('users');
       table.enum('role', Object.values(OrderStaus))
         .defaultTo(OrderStaus.UNPAID)
         .notNullable()
