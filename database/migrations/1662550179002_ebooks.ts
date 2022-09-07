@@ -6,10 +6,12 @@ export default class Ebooks extends BaseSchema {
   public async up () {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
-      table.string('')
+      table.string('title').notNullable()
+      table.string('author').notNullable()
+      table.string('summary').notNullable()
+      table.string('price').notNullable()
       table.timestamp('created_at', { useTz: true })
       table.timestamp('updated_at', { useTz: true })
-
     })
   }
 

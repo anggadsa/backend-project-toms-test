@@ -13,7 +13,7 @@ export default class Users extends BaseSchema {
       table.enum('role', Object.values(UserRoles))
         .defaultTo(UserRoles.DRAFT)
         .notNullable()
-      table.string('phoneNumber').notNullable()
+      table.string('phone_number').notNullable()
       table.string('address').notNullable()
       table.timestamp('created_at', { useTz: true })
       table.timestamp('updated_at', { useTz: true })
