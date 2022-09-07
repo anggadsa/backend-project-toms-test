@@ -35,4 +35,15 @@ Route.get('/', async () => {
 
 Route
   .resource('users', 'UsersController')
-  .only(['index', 'create', 'show'])
+  .apiOnly()
+Route.post('admin', 'UsersController.adminCreate')
+
+Route
+  .resource('orders', 'OrdersController')
+  .apiOnly()
+  
+Route
+.resource('Ebooks', 'EbooksController')
+.apiOnly()
+
+
