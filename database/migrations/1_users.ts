@@ -10,6 +10,7 @@ export default class Users extends BaseSchema {
       table.string('name').notNullable()
       table.string('email').notNullable().unique()
       table.string('password').notNullable()
+      table.string('remember_me_token').nullable()
       table.enum('role', Object.values(UserRoles))
         .defaultTo(UserRoles.DRAFT)
         .notNullable()

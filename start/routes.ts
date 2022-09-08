@@ -37,13 +37,14 @@ Route
   .resource('users', 'UsersController')
   .apiOnly()
 Route.post('admin', 'UsersController.adminCreate')
+Route.post('login', 'UsersController.login')
 
 Route
   .resource('orders', 'OrdersController')
   .apiOnly()
+Route.get('admin/orders', 'OrdersController.allOrders')
   
 Route
-.resource('Ebooks', 'EbooksController')
-.apiOnly()
-
+  .resource('ebooks', 'EbooksController')
+  .apiOnly()
 

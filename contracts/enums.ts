@@ -6,7 +6,7 @@ export enum UserRoles {
     DELETED = 'deleted',
  }
 
-export enum OrderStaus {
+export enum OrderStatus {
     PAID = 'paid',
     UNPAID = 'unpaid',
     CANCELED = 'canceled',

@@ -1,12 +1,13 @@
 import { DateTime } from 'luxon'
 import Hash from '@ioc:Adonis/Core/Hash';
 import Orders from './Order';
+// import JwtTokens from 'Database/migrations/4_jwt_tokens';
 import { column, beforeSave, BaseModel, hasMany, HasMany } from "@ioc:Adonis/Lucid/Orm";
 import { UserRoles } from 'Contracts/enums'
 
 export default class User extends BaseModel {
   @hasMany(() => Orders)
-  public orders: HasMany<typeof Orders>
+  public orders: HasMany<typeof Orders> 
 
   @column({ isPrimary: true })
   public id: number
@@ -20,6 +21,8 @@ export default class User extends BaseModel {
   @column()
   public password:string
   
+  @column()
+  public rememberMeToken?: string
   
   @column()
   public role:UserRoles
